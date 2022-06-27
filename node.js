@@ -1,19 +1,19 @@
-// link to page creation
+
 const generateHTML = require('./src/generateHTML');
 
-// team profiles
+
 const Manager = require('./team/Manager');
 const Engineer = require('./team/Engineer');
 const Intern = require('./team/Intern'); 
 
-// node modules 
+
 const fs = require('fs'); 
 const inquirer = require('inquirer');
 
-// team array
+
 const teamArray = []; 
 
-// start of manager prompts 
+ 
 const addManager = () => {
     return inquirer.prompt ([
         {
@@ -195,14 +195,11 @@ const addEmployee = () => {
 };
 
 
-// function to generate HTML page file using file system 
 const writeFile = data => {
-    fs.writeFile('./dist/index.html', data, err => {
-        // if there is an error 
+    fs.writeFile('./dist/index.html', data, err => { 
         if (err) {
             console.log(err);
             return;
-        // when the profile has been created 
         } else {
             console.log("Your team profile has been successfully created! Please check out the index.html")
         }
